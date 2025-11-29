@@ -18,12 +18,14 @@ interface ChileMapProps {
 
 const ChileMap = ({ data, onRegionSelect, selectedRegion }: ChileMapProps) => {
     return (
-        <div className="h-[600px] w-full bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative">
+        // CAMBIO CLAVE: Quitamos h-[600px] y ponemos h-full.
+        // Ahora el mapa se estirará o encogerá para caber EXACTO en el espacio que le des.
+        <div className="h-full w-full bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative">
             <ComposableMap
                 projection="geoMercator"
                 projectionConfig={{
-                    scale: 650,          // Zoom ajustado
-                    center: [-70, -38]   // Centro de Chile
+                    scale: 650,
+                    center: [-70, -38]
                 }}
                 className="w-full h-full"
             >
@@ -33,41 +35,25 @@ const ChileMap = ({ data, onRegionSelect, selectedRegion }: ChileMapProps) => {
                             if (!geographies || geographies.length === 0) return null;
 
                             return geographies.map((geo) => {
-                                // CORRECCIÓN CLAVE: Este mapa usa la propiedad "Region" o "Region_Nam"
                                 const regionName = geo.properties.Region || geo.properties.Region_Nam;
-
-                                // Normalizamos nombres para evitar errores (ej: "Valparaiso" vs "Valparaíso")
                                 const cur = data.find((s) =>
                                     s.region.toLowerCase().includes(regionName.toLowerCase()) ||
                                     regionName.toLowerCase().includes(s.region.toLowerCase())
                                 );
-
                                 const isSelected = selectedRegion === regionName;
 
                                 return (
                                     <Geography
                                         key={geo.rsmKey}
                                         geography={geo}
-                                        onClick={() => {
-                                            console.log("Región:", regionName);
-                                            onRegionSelect(regionName);
-                                        }}
+                                        onClick={() => onRegionSelect(regionName)}
                                         style={{
                                             default: {
                                                 fill: isSelected ? "#334155" : (cur ? colorScale(cur.value) : "#CBD5E1"),
-                                                outline: "none",
-                                                stroke: "#FFF",
-                                                strokeWidth: 0.5,
+                                                outline: "none", stroke: "#FFF", strokeWidth: 0.5,
                                             },
-                                            hover: {
-                                                fill: "#D6001C",
-                                                outline: "none",
-                                                cursor: "pointer"
-                                            },
-                                            pressed: {
-                                                fill: "#000",
-                                                outline: "none",
-                                            },
+                                            hover: { fill: "#D6001C", outline: "none", cursor: "pointer" },
+                                            pressed: { fill: "#000", outline: "none" },
                                         }}
                                     />
                                 );
