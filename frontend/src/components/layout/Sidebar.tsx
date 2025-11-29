@@ -25,7 +25,7 @@ export function Sidebar() {
                     <Users size={20} />
                     Voluntarios
                 </Link>
-                <Link href="/dashboard/campanas" className="flex items-center gap-3 px-4 py-3 text-slate-600 rounded-xl font-medium hover:bg-red-50 hover:text-teleton-red transition-colors">
+                <Link href="/dashboard/comunicaciones" className="flex items-center gap-3 px-4 py-3 text-slate-600 rounded-xl font-medium hover:bg-red-50 hover:text-teleton-red transition-colors">
                     <Megaphone size={20} />
                     Comunicaciones
                 </Link>
