@@ -1,18 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
-import {MapPin, Heart, LayoutDashboard, Users, Megaphone, Settings, LogOut } from 'lucide-react';
+import { MapPin, Heart, LayoutDashboard, Users, Megaphone, Settings, LogOut } from 'lucide-react';
 
 export function Sidebar() {
     return (
         <aside className="fixed left-0 top-0 h-full w-64 bg-white border-r border-slate-200 z-30 hidden md:flex flex-col">
-            {/* Logo Area */}
+
+            {/* Logo Area - AHORA ES UN LINK */}
             <div className="h-16 flex items-center px-6 border-b border-slate-100">
-                <div className="flex items-center gap-2 text-slate-900 font-bold text-lg">
+                <Link
+                    href="/"
+                    className="flex items-center gap-2 text-slate-900 font-bold text-lg hover:opacity-80 transition-opacity cursor-pointer"
+                >
                     <div className="bg-teleton-red p-1.5 rounded-full text-white animate-heartbeat">
                         <Heart size={18} fill="currentColor" />
                     </div>
                     Voluntarios<span className="text-teleton-red">360</span>
-                </div>
+                </Link>
             </div>
 
             {/* Navigation */}
