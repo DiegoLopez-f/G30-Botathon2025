@@ -9,15 +9,20 @@ export interface Voluntario {
   Comuna: string;
   Genero: string;
   FechaNacimiento: string;
-  Ocupacion: string;
+  
+  // --- TUS NUEVOS CAMPOS ---
   Instituto: string;
+  Ocupacion: string;
+  Capacitacion: string;       // Ej: "Liderazgo"
+  CampanaAsignada: string;    // Ej: "Teletón 2025"
+  TipoVoluntario: string;     // Ej: "Permanente"
+  
   EstadoVoluntario: string;
-  Disponibilidad: string;
+  Disponibilidad: string;     // Mantenemos string simple para evitar conflictos
   FechaRegistro: string;
   FechaUltimaActualizacion: string;
 }
 
-// Opcional: Tipo para el formulario (sin ID ni fechas automáticas)
 export interface VoluntarioFormData {
   RUT: string;
   NombreCompleto: string;
@@ -27,8 +32,14 @@ export interface VoluntarioFormData {
   Comuna: string;
   Genero: string;
   FechaNacimiento: string;
-  Ocupacion: string;
+  
+  // Campos del formulario
   Instituto: string;
+  Ocupacion: string;
+  Capacitacion: string;
+  CampanaAsignada: string;
+  TipoVoluntario: string;
+  
   EstadoVoluntario: string;
   Disponibilidad: string;
 }

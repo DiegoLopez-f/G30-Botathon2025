@@ -19,8 +19,8 @@ const mockVoluntarios: Voluntario[] = [
     CampanaAsignada: 'Teletón 2025',
     Capacitacion: 'Liderazgo de Equipos',
     EstadoVoluntario: 'Activo',
-    Disponibilidad: ['Fines de Semana', 'Tarde (Lun-Vie)'],
-    Habilidades: ['Liderazgo', 'Primeros Auxilios'],
+    Disponibilidad: ['Fines de Semana', 'Tarde (Lun-Vie)'], // Array correcto
+    Habilidades: ['Liderazgo', 'Primeros Auxilios'],         // Array correcto
     FechaRegistro: '2023-01-15T10:00:00Z',
     FechaUltimaActualizacion: '2024-11-29T10:00:00Z'
   },
@@ -100,7 +100,7 @@ export function useVoluntarios() {
   };
 
   const deleteVoluntario = async (id: number) => {
-    if (!confirm('¿Estás seguro de eliminar este voluntario?')) return;
+    if (!confirm('¿Estás seguro?')) return;
     setVoluntarios(prev => prev.filter(v => v.VoluntarioID !== id));
   };
 
