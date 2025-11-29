@@ -7,7 +7,7 @@ interface MetricCardProps {
     icon: LucideIcon;
     trend?: string;
     trendUp?: boolean; // true = verde, false = rojo
-    color?: "red" | "blue" | "purple" | "orange";
+    color?: "red" | "blue" | "purple" | "orange" ;
 }
 
 export function MetricCard({

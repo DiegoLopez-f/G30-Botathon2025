@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { MapPin, Heart, LayoutDashboard, Users, Megaphone, Settings, LogOut } from 'lucide-react';
+import {MapPin, Heart, LayoutDashboard, Users, Megaphone, Settings, LogOut, Building2} from 'lucide-react';
 
 export function Sidebar() {
     const pathname = usePathname();
@@ -48,6 +48,13 @@ export function Sidebar() {
                 <Link href="/dashboard/comunicaciones" className={`${baseClasses} ${isActive('/dashboard/comunicaciones') ? activeClasses : inactiveClasses}`}>
                     <Megaphone size={20} />
                     Comunicaciones
+                </Link>
+                <Link
+                    href="/dashboard/institutos"
+                    className={`${baseClasses} ${isActive('/dashboard/institutos') ? activeClasses : inactiveClasses}`}
+                >
+                    <Building2 size={20} />
+                    Institutos
                 </Link>
             </nav>
 
