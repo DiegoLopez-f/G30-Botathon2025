@@ -14,16 +14,17 @@ export default function LandingPage() {
                                 <Heart size={20} fill="currentColor" />
                             </div>
                             <span className="font-bold text-xl tracking-tight text-slate-800">
-                Voluntarios<span className="text-teleton-red">360</span>
+                Vocatio<span className="text-teleton-red"></span>
               </span>
                         </div>
-                        <div className="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-                            <a href="#" className="hover:text-teleton-red transition">Propuesta</a>
-                            <a href="#" className="hover:text-teleton-red transition">Tecnología</a>
-                        </div>
-                        <button className="bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-800 transition">
+                        <a
+                            href="https://evento.teleton.cl/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-800 transition flex items-center justify-center"
+                        >
                             Botathon 2025
-                        </button>
+                        </a>
                     </div>
                 </div>
             </nav>

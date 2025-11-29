@@ -50,7 +50,6 @@ export default async function DashboardPage() {
                 </div>
                 <div className="flex gap-3">
                     <Button variant="outline" size="sm">Descargar Reporte</Button>
-                    <Button variant="primary" size="sm">Nueva Campaña</Button>
                 </div>
             </div>
 
