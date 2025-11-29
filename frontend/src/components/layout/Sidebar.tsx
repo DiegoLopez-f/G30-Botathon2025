@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Heart, LayoutDashboard, Users, Megaphone, Settings, LogOut } from 'lucide-react';
+import {MapPin, Heart, LayoutDashboard, Users, Megaphone, Settings, LogOut } from 'lucide-react';
 
 export function Sidebar() {
     return (
@@ -28,6 +28,10 @@ export function Sidebar() {
                 <Link href="/dashboard/campanas" className="flex items-center gap-3 px-4 py-3 text-slate-600 rounded-xl font-medium hover:bg-red-50 hover:text-teleton-red transition-colors">
                     <Megaphone size={20} />
                     Comunicaciones
+                </Link>
+                <Link href="/dashboard/mapa" className="flex items-center gap-3 px-4 py-3 text-slate-600 rounded-xl font-medium hover:bg-red-50 hover:text-teleton-red transition-colors">
+                    <MapPin size={20} />
+                    Mapa Geográfico
                 </Link>
             </nav>
 
