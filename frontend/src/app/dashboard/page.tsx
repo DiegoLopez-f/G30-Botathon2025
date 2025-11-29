@@ -90,7 +90,6 @@ export default async function DashboardPage() {
                 <div className="flex justify-between items-center mb-4">
                     <h3 className="text-lg font-bold text-slate-800">Búsqueda y Segmentación</h3>
                 </div>
-                <FiltersBar />
             </section>
 
             {/* Placeholder visual... */}

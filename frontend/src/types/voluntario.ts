@@ -10,17 +10,29 @@ export interface Voluntario {
   Genero: string;
   FechaNacimiento: string;
   
-  // --- TUS NUEVOS CAMPOS ---
+  // --- CAMPOS PERFIL ---
   Instituto: string;
   Ocupacion: string;
-  Capacitacion: string;       // Ej: "Liderazgo"
-  CampanaAsignada: string;    // Ej: "Teletón 2025"
-  TipoVoluntario: string;     // Ej: "Permanente"
+  TipoVoluntario: string;
+  CampanaAsignada: string;
+  Capacitacion: string;
   
+  // --- ESTADO ---
   EstadoVoluntario: string;
-  Disponibilidad: string;     // Mantenemos string simple para evitar conflictos
+  Disponibilidad: string[]; // Array de strings
+  Habilidades: string[];    // Array de strings
+  
   FechaRegistro: string;
   FechaUltimaActualizacion: string;
+}
+
+export interface Participacion {
+  id: number;
+  campana: string;
+  rol: string;
+  fecha: string;
+  horas: number;
+  estado: 'Asistió' | 'Ausente' | 'Inscrito';
 }
 
 export interface VoluntarioFormData {
@@ -33,13 +45,13 @@ export interface VoluntarioFormData {
   Genero: string;
   FechaNacimiento: string;
   
-  // Campos del formulario
-  Instituto: string;
   Ocupacion: string;
-  Capacitacion: string;
-  CampanaAsignada: string;
+  Instituto: string;
   TipoVoluntario: string;
+  CampanaAsignada: string;
+  Capacitacion: string;
   
   EstadoVoluntario: string;
-  Disponibilidad: string;
+  Disponibilidad: string[];
+  Habilidades: string[];
 }

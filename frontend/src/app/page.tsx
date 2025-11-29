@@ -1,5 +1,6 @@
 import React from 'react';
-import { Heart, Bot, Database, Zap, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { Heart, Bot, Database, Zap, ArrowRight, Lock } from 'lucide-react';
 
 export default function LandingPage() {
     return (
@@ -17,14 +18,24 @@ export default function LandingPage() {
                 Vocatio<span className="text-teleton-red"></span>
               </span>
                         </div>
-                        <a
-                            href="https://evento.teleton.cl/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-800 transition flex items-center justify-center"
-                        >
-                            Botathon 2025
-                        </a>
+
+                        <div className="flex items-center gap-4">
+                            <Link href="/login">
+                                <button className="flex items-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-200 transition">
+                                    <Lock size={16} />
+                                    Acceso Admin
+                                </button>
+                            </Link>
+
+                            <a
+                                href="https://evento.teleton.cl/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-800 transition flex items-center justify-center"
+                            >
+                                Botathon 2025
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -86,6 +97,6 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
-        </div>
-    );
+        </div>
+    );
 }
