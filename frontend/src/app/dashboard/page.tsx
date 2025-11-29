@@ -3,7 +3,7 @@ import { supabase } from '@/src/lib/supabase'; // <--- Importamos nuestra conexi
 import { Users, MapPin, Activity, HeartHandshake, TrendingUp } from 'lucide-react';
 import { StatsGrid } from '@/src/components/dashboard/StatsGrid';
 import { MetricCard } from '@/src/components/ui/MetricCard';
-import { FiltersBar } from '@/src/components/volunteers/FiltersBar';
+import  FiltersBar  from '@/src/components/volunteers/FiltersBar';
 import { Button } from '@/src/components/ui/Button';
 
 // 1. Función para traer datos reales (simulada por ahora si no hay DB)
